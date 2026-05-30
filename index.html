@@ -205,8 +205,20 @@
         /* Card Grid */
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .card-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
         }
 
         .card {
@@ -254,7 +266,7 @@
 
         .card-vertical .image {
             width: 100%;
-            height: 192px;
+            height: 144px;
             background: white;
             display: flex;
             align-items: center;
@@ -268,14 +280,14 @@
         }
 
         .card-vertical .content {
-            padding: 2rem;
+            padding: 1.5rem;
         }
 
         .card-vertical .content h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
+            font-size: 1.125rem;
+            font-weight: 700;
             color: var(--primary-color);
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
         }
 
         .card-vertical .content p {
@@ -389,6 +401,15 @@
             font-size: 1.5rem;
             font-weight: bold;
             color: white;
+            transition: all 0.3s;
+        }
+
+        footer .phone:hover {
+            text-decoration: underline;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
 
         footer .copyright {
@@ -543,7 +564,7 @@
                                 <div style="width: 24px; height: 24px; background: rgba(62, 71, 107, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
                                     <div style="width: 8px; height: 8px; background: #3e476b; border-radius: 50%;"></div>
                                 </div>
-                                <div style="font-size: 1rem; line-height: 1.5;">
+                                <div style="font-size: 1.125rem; line-height: 1.5;">
                                     <strong style="color: #111827;">The Perfect Blend of Tech & Craft:</strong>
                                     <span style="color: #374151;"> We don't just rely on state-of-the-art machinery. Our true secret lies in our bespoke, highly skilled artisans who use meticulous hand-cleaning techniques for delicate fabrics.</span>
                                 </div>
@@ -552,7 +573,7 @@
                                 <div style="width: 24px; height: 24px; background: rgba(62, 71, 107, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
                                     <div style="width: 8px; height: 8px; background: #3e476b; border-radius: 50%;"></div>
                                 </div>
-                                <div style="font-size: 1rem; line-height: 1.5;">
+                                <div style="font-size: 1.125rem; line-height: 1.5;">
                                     <strong style="color: #111827;">Beyond Dry Cleaning:</strong>
                                     <span style="color: #374151;"> We are your one-stop shop, offering expert alterations, repairs, and specialized shoe cleaning.</span>
                                 </div>
@@ -561,7 +582,7 @@
                                 <div style="width: 24px; height: 24px; background: rgba(62, 71, 107, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
                                     <div style="width: 8px; height: 8px; background: #3e476b; border-radius: 50%;"></div>
                                 </div>
-                                <div style="font-size: 1rem; line-height: 1.5;">
+                                <div style="font-size: 1.125rem; line-height: 1.5;">
                                     <strong style="color: #111827;">Family Values:</strong>
                                     <span style="color: #374151;"> We treat every customer like family, anchoring our service in integrity, reliability, and personalized care.</span>
                                 </div>
@@ -592,7 +613,14 @@
                 </div>
                 
                 <!-- Image Content -->
-                <div class="alternative-hero-image" style="position: relative;">
+                <div class="alternative-hero-image" style="position: relative; padding-top: 6rem;">
+                    <!-- Floating Badge - Top Right Corner -->
+                    <div style="position: absolute; top: -2rem; right: 1rem; background: #3e476b; border-radius: 50%; box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15); padding: 2rem; width: 160px; height: 160px; display: flex; align-items: center; justify-content: center; z-index: 10;">
+                        <h3 style="color: white; font-size: 0.875rem; font-weight: 700; text-align: center; line-height: 1.3;">
+                            Kerala's First and Finest Drycleaners
+                        </h3>
+                    </div>
+                    
                     <div style="position: relative; border-radius: 1rem; overflow: hidden; box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);">
                         <img
                             src="assets/images/hero_image.jpeg"
@@ -600,13 +628,6 @@
                             style="width: 100%; height: auto; display: block;"
                         />
                         <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(62, 71, 107, 0.2), transparent);"></div>
-                    </div>
-                    
-                    <!-- Floating Badge -->
-                    <div style="position: absolute; top: 1rem; right: 1rem; background: #3e476b; border-radius: 50%; box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15); padding: 2rem; width: 160px; height: 160px; display: flex; align-items: center; justify-content: center;">
-                        <h3 style="color: white; font-size: 0.875rem; font-weight: 700; text-align: center; line-height: 1.3;">
-                            Kerala's First and Finest Drycleaners
-                        </h3>
                     </div>
                     
                     <!-- Floating Card -->
@@ -718,8 +739,8 @@
                 <div class="underline"></div>
             </div>
             <div class="card-grid">
-                <div class="card card-horizontal">
-                    <div class="icon">
+                <div class="card-vertical">
+                    <div class="image">
                         <img src="assets/images/credibility.png" alt="Credibility">
                     </div>
                     <div class="content">
@@ -727,8 +748,8 @@
                         <p>With over 70 years of expertise, we have thoughtfully designed a system that ensures your fabric stay fresh and flawless.</p>
                     </div>
                 </div>
-                <div class="card card-horizontal">
-                    <div class="icon">
+                <div class="card-vertical">
+                    <div class="image">
                         <img src="assets/images/SAFETY.png" alt="Safety">
                     </div>
                     <div class="content">
@@ -736,8 +757,8 @@
                         <p>We make sure to use non-toxic solvents. We especially abstain from using PERC, our primary hydrocarbon is commonly referred to as "White Petrol" or "MTO (mineral turpentine oil)."</p>
                     </div>
                 </div>
-                <div class="card card-horizontal">
-                    <div class="icon">
+                <div class="card-vertical">
+                    <div class="image">
                         <img src="assets/images/VALUE.png" alt="Value">
                     </div>
                     <div class="content">
@@ -745,14 +766,14 @@
                         <p>Our services are priced reasonably and we assure you that the quality of our services speaks on our end product.</p>
                     </div>
                 </div>
-                <div class="card card-horizontal">
-                    <div class="icon">
+                <div class="card-vertical">
+                    <div class="image">
                         <img src="assets/images/CUSTOMERCARE.png" alt="Customer Care">
                     </div>
                     <div class="content">
                         <h3>CUSTOMER CARE</h3>
                         <p>For the convenience of our ever-growing base of customers, we have a customer care line where you can call to enquire and share your feedback.</p>
-                        <p style="font-size: 0.875rem; margin-top: 0.5rem;">Working hours are from 9:30am to 6:00pm, Monday to Saturday.</p>
+                        <p style="font-size: 1.125rem; margin-top: 0.5rem;">Working hours are from 9:30am to 6:00pm, Monday to Saturday.</p>
                     </div>
                 </div>
             </div>
@@ -824,8 +845,8 @@
                 <div class="underline"></div>
             </div>
             <div class="card-grid">
-                <div class="card card-horizontal">
-                    <div class="icon">
+                <div class="card-vertical">
+                    <div class="image">
                         <img src="assets/images/Inspection & Tagging.png" alt="Inspection & Tagging">
                     </div>
                     <div class="content">
@@ -833,8 +854,8 @@
                         <p>When you bring the fabric to us, your clothes are examined. The cleaner will look out for stains, colour variations and any damages. If there are any stains spotted, whether its ink, blood or nasty grease, they note it and tag it.</p>
                     </div>
                 </div>
-                <div class="card card-horizontal">
-                    <div class="icon">
+                <div class="card-vertical">
+                    <div class="image">
                         <img src="assets/images/Sorted and Drycleaned.png" alt="Sorted and Drycleaned">
                     </div>
                     <div class="content">
@@ -842,8 +863,8 @@
                         <p>The clothes are then colour separated and placed in the machine or hand dipped in MTO (mineral turpentine oil), submerged in industrial fabric solvents and soap oils. Later, it's spun in a perforated cylinder and the excess solvent is removed. By that time.</p>
                     </div>
                 </div>
-                <div class="card card-horizontal">
-                    <div class="icon">
+                <div class="card-vertical">
+                    <div class="image">
                         <img src="assets/images/Dried.png" alt="Dried">
                     </div>
                     <div class="content">
@@ -851,8 +872,8 @@
                         <p>Once the washing is over with, the fabric is dried, with the garments folded inside-out to prevent colour loss. Using this technique, it helps retain the color and texture of your garments.</p>
                     </div>
                 </div>
-                <div class="card card-horizontal">
-                    <div class="icon">
+                <div class="card-vertical">
+                    <div class="image">
                         <img src="assets/images/Pressed and packed.png" alt="Pressed and packed">
                     </div>
                     <div class="content">
@@ -931,22 +952,99 @@
     </section>
 
     <!-- Terms and Conditions Section -->
-    <section style="padding: 3rem 0; background-color: #f9fafb;">
-        <div class="container">
-            <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap;">
-                <div>
-                    <h3 style="font-size: 1.875rem; font-weight: 700; color: #3e476b; margin-bottom: 0.5rem;">Terms and Conditions</h3>
-                    <p style="color: #4b5563;">Please read our terms carefully before using our services</p>
+    <section id="terms-and-conditions" style="padding: 5rem 0; background-color: #f9fafb;">
+        <div style="max-width: 1100px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 3rem; font-weight: 700; color: #3e476b; margin-bottom: 1rem;">Terms and Conditions</h2>
+                <div style="width: 6rem; height: 4px; background-color: #3e476b; margin: 1rem auto;"></div>
+                <p style="font-size: 1.125rem; color: #6b7280; max-width: 48rem; margin-left: auto; margin-right: auto;">
+                    Please read these terms and conditions carefully before using our services
+                </p>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <div style="background-color: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07); padding: 2rem; transition: box-shadow 0.3s ease;" onmouseover="this.style.boxShadow='0 10px 15px rgba(0, 0, 0, 0.1)'" onmouseout="this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.07)'">
+                    <h3 style="font-size: 1.5rem; font-weight: 700; color: #3e476b; margin-bottom: 1rem;">1. Stain Removal Policy</h3>
+                    <p style="font-size: 1.125rem; color: #374151; line-height: 1.8;">
+                        The company does not utilize specific chemical treatments or specialized processes for stain removal. As the complete removal of stains cannot be guaranteed, all items are processed according to standard cleaning protocols.
+                    </p>
                 </div>
-                <div>
-                    <a 
-                        href="terms-and-conditions.html"
-                        style="display: inline-block; background-color: #3e476b; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.125rem; transition: background-color 0.3s;"
-                        onmouseover="this.style.backgroundColor='#2e3650'"
-                        onmouseout="this.style.backgroundColor='#3e476b'"
-                    >
-                        Terms and Conditions
-                    </a>
+
+                <div style="background-color: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07); padding: 2rem; transition: box-shadow 0.3s ease;" onmouseover="this.style.boxShadow='0 10px 15px rgba(0, 0, 0, 0.1)'" onmouseout="this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.07)'">
+                    <h3 style="font-size: 1.5rem; font-weight: 700; color: #3e476b; margin-bottom: 1rem;">2. Limitation of Liability for Material Defects</h3>
+                    <p style="font-size: 1.125rem; color: #374151; line-height: 1.8;">
+                        While all articles are handled with the utmost care, the company is not responsible for discoloration, shrinkage, or damage resulting from non-apparent or inherent material defects. Such items are accepted for service strictly at the owner's risk.
+                    </p>
+                </div>
+
+                <div style="background-color: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07); padding: 2rem; transition: box-shadow 0.3s ease;" onmouseover="this.style.boxShadow='0 10px 15px rgba(0, 0, 0, 0.1)'" onmouseout="this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.07)'">
+                    <h3 style="font-size: 1.5rem; font-weight: 700; color: #3e476b; margin-bottom: 1rem;">3. Embellishments and Manufacturing Issues</h3>
+                    <p style="font-size: 1.125rem; color: #374151; line-height: 1.8;">
+                        The company shall incur no liability for damage, shrinkage, color bleeding, or general deterioration caused by the nature of the fabric, embellishments (fancy work), or pre-existing manufacturing defects.
+                    </p>
+                </div>
+
+                <div style="background-color: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07); padding: 2rem; transition: box-shadow 0.3s ease;" onmouseover="this.style.boxShadow='0 10px 15px rgba(0, 0, 0, 0.1)'" onmouseout="this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.07)'">
+                    <h3 style="font-size: 1.5rem; font-weight: 700; color: #3e476b; margin-bottom: 1rem;">4. Inspection and Notification</h3>
+                    <p style="font-size: 1.125rem; color: #374151; line-height: 1.8;">
+                        Articles are subject to a detailed professional inspection at our central processing unit. Any discrepancies regarding the condition of an item will be communicated via the provided contact number within five (5) days. If a response is not received within this period, the company's assessment shall be deemed final and binding.
+                    </p>
+                </div>
+
+                <div style="background-color: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07); padding: 2rem; transition: box-shadow 0.3s ease;" onmouseover="this.style.boxShadow='0 10px 15px rgba(0, 0, 0, 0.1)'" onmouseout="this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.07)'">
+                    <h3 style="font-size: 1.5rem; font-weight: 700; color: #3e476b; margin-bottom: 1rem;">5. Verification of Articles</h3>
+                    <p style="font-size: 1.125rem; color: #374151; line-height: 1.8;">
+                        Customers are required to inspect all garments and serviced articles at the time of collection or delivery. The company accepts no responsibility for missing items once they have left our premises.
+                    </p>
+                </div>
+
+                <div style="background-color: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07); padding: 2rem; transition: box-shadow 0.3s ease;" onmouseover="this.style.boxShadow='0 10px 15px rgba(0, 0, 0, 0.1)'" onmouseout="this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.07)'">
+                    <h3 style="font-size: 1.5rem; font-weight: 700; color: #3e476b; margin-bottom: 1rem;">6. Unclaimed Items</h3>
+                    <p style="font-size: 1.125rem; color: #374151; line-height: 1.8;">
+                        Any article not collected within six (6) months of the scheduled due date may be disposed of at the company's discretion without further notice.
+                    </p>
+                </div>
+
+                <div style="background-color: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07); padding: 2rem; transition: box-shadow 0.3s ease;" onmouseover="this.style.boxShadow='0 10px 15px rgba(0, 0, 0, 0.1)'" onmouseout="this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.07)'">
+                    <h3 style="font-size: 1.5rem; font-weight: 700; color: #3e476b; margin-bottom: 1rem;">7. Right of Refusal</h3>
+                    <p style="font-size: 1.125rem; color: #374151; line-height: 1.8;">
+                        The company reserves the right to decline or cancel a service order even after initial acceptance at a shop, outlet, or counter.
+                    </p>
+                </div>
+
+                <div style="background-color: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07); padding: 2rem; transition: box-shadow 0.3s ease;" onmouseover="this.style.boxShadow='0 10px 15px rgba(0, 0, 0, 0.1)'" onmouseout="this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.07)'">
+                    <h3 style="font-size: 1.5rem; font-weight: 700; color: #3e476b; margin-bottom: 1rem;">8. Loss or Damage Compensation</h3>
+                    <p style="font-size: 1.125rem; color: #374151; line-height: 1.8;">
+                        In the event of loss or irreparable damage, and as a gesture of goodwill, the company's liability is limited to a maximum of ten (10) times the individual cleaning charge for that specific garment.
+                    </p>
+                </div>
+
+                <div style="background-color: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07); padding: 2rem; transition: box-shadow 0.3s ease;" onmouseover="this.style.boxShadow='0 10px 15px rgba(0, 0, 0, 0.1)'" onmouseout="this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.07)'">
+                    <h3 style="font-size: 1.5rem; font-weight: 700; color: #3e476b; margin-bottom: 1rem;">9. Processing Methods</h3>
+                    <p style="font-size: 1.125rem; color: #374151; line-height: 1.8;">
+                        The company retains full discretion over the cleaning methods and processes used to achieve satisfactory results. No claims or disputes regarding the chosen process will be entertained after the service is completed.
+                    </p>
+                </div>
+
+                <div style="background-color: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07); padding: 2rem; transition: box-shadow 0.3s ease;" onmouseover="this.style.boxShadow='0 10px 15px rgba(0, 0, 0, 0.1)'" onmouseout="this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.07)'">
+                    <h3 style="font-size: 1.5rem; font-weight: 700; color: #3e476b; margin-bottom: 1rem;">10. Complaint Window</h3>
+                    <p style="font-size: 1.125rem; color: #374151; line-height: 1.8;">
+                        All complaints must be formally lodged within 48 hours of delivery if the customer accepts the items without prior verification at the outlet or counter.
+                    </p>
+                </div>
+
+                <div style="background-color: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07); padding: 2rem; transition: box-shadow 0.3s ease;" onmouseover="this.style.boxShadow='0 10px 15px rgba(0, 0, 0, 0.1)'" onmouseout="this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.07)'">
+                    <h3 style="font-size: 1.5rem; font-weight: 700; color: #3e476b; margin-bottom: 1rem;">11. Jurisdiction</h3>
+                    <p style="font-size: 1.125rem; color: #374151; line-height: 1.8;">
+                        Any legal disputes or proceedings arising from these terms shall be subject to the exclusive jurisdiction of the courts in Ernakulam.
+                    </p>
+                </div>
+
+                <div style="background-color: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07); padding: 2rem; transition: box-shadow 0.3s ease;" onmouseover="this.style.boxShadow='0 10px 15px rgba(0, 0, 0, 0.1)'" onmouseout="this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.07)'">
+                    <h3 style="font-size: 1.5rem; font-weight: 700; color: #3e476b; margin-bottom: 1rem;">12. Proof of Deposit</h3>
+                    <p style="font-size: 1.125rem; color: #374151; line-height: 1.8;">
+                        Articles will be released and delivered only upon the presentation of the original service receipt.
+                    </p>
                 </div>
             </div>
         </div>
@@ -965,15 +1063,16 @@
                     Jos Brothers building, Jos Jn.<br>
                     M.G Road, Ernakulam, 682016</p>
                     <p><strong style="color: white;">Email:</strong><br>
-                    <a href="mailto:info@josbrothersdrycleaners.com">info@josbrothersdrycleaners.com</a></p>
+                    <a href="mailto:josbrothersdrycleaners@gmail.com" style="transition: all 0.3s;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">josbrothersdrycleaners@gmail.com</a></p>
                 </div>
                 <div>
                     <h3>Call Us</h3>
                     <p><a href="tel:+917593955500" class="phone">+91 75939 55500</a></p>
+                    <p><a href="tel:+919995050000" class="phone">+91 99950 50000</a></p>
                 </div>
             </div>
             <div class="copyright">
-                <p>© 2026 Josbrothersdrycleaners.com. All rights reserved. | <a href="terms-and-conditions.html" style="text-decoration: none;">Terms and Conditions</a></p>
+                <p>© 2026 Josbrothersdrycleaners.com. All rights reserved. | <a href="#terms-and-conditions" style="text-decoration: none;">Terms and Conditions</a></p>
             </div>
         </div>
     </footer>
