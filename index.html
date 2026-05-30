@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jos Brothers Dry Cleaners - Kerala's First and Finest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #3e476b;
+            --primary-hover: #2e3650;
+        }
+
+        body {
+            font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 112px;
+            padding: 1rem;
+        }
+
+        nav .logo img {
+            width: 353px;
+            height: auto;
+        }
+
+        nav .menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav .menu a {
+            text-decoration: none;
+            color: #4b5563;
+            font-weight: 500;
+            font-size: 0.875rem;
+            padding: 0.5rem 0.75rem;
+            transition: color 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav .menu a:hover,
+        nav .menu a.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        nav .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav .social-links a {
+            color: #4b5563;
+            transition: color 0.3s;
+        }
+
+        nav .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        nav .social-links svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+
+        section:first-of-type {
+            padding-top: 10rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header .underline {
+            width: 96px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 0 auto;
+        }
+
+        /* Our Story */
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        .story-image {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            border-radius: 0.5rem 0 0 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+
+        .story-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 160px;
+            height: 160px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+        }
+
+        .story-badge h3 {
+            color: white;
+            font-size: 1.125rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .story-content {
+            background: var(--primary-color);
+            padding: 3rem;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+
+        .story-content h2 {
+            font-size: 2.25rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .story-content .underline {
+            width: 96px;
+            height: 4px;
+            background: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .story-content p {
+            font-size: 1.125rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        /* Two Column Images */
+        .two-column-images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            padding: 5rem 0;
+        }
+
+        .two-column-images img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* Card Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .card {
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            background: rgba(245, 248, 250, 0.8);
+        }
+
+        .card-horizontal {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .card-horizontal .icon {
+            flex-shrink: 0;
+            width: 128px;
+            height: 128px;
+        }
+
+        .card-horizontal .icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-horizontal .content h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .card-horizontal .content p {
+            color: #374151;
+        }
+
+        /* How We Work Cards */
+        .card-vertical {
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            background: rgba(245, 248, 250, 0.8);
+            border: 2px solid rgba(245, 248, 250, 0.8);
+        }
+
+        .card-vertical .image {
+            width: 100%;
+            height: 192px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-vertical .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .card-vertical .content {
+            padding: 2rem;
+        }
+
+        .card-vertical .content h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .card-vertical .content p {
+            color: #374151;
+        }
+
+        /* Pricing Cards */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .pricing-card {
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            background: rgba(245, 248, 250, 0.8);
+            border: 2px solid rgba(245, 248, 250, 0.8);
+        }
+
+        .pricing-card .image {
+            width: 100%;
+            height: 256px;
+            background: white;
+        }
+
+        .pricing-card .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pricing-card .content {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .pricing-card .content h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-card .content .price {
+            font-size: 1.875rem;
+            font-weight: bold;
+            color: #111827;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-card .content button {
+            width: 100%;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.75rem 0;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .pricing-card .content button:hover {
+            background: var(--primary-hover);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 3rem 0;
+        }
+
+        footer .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        footer .logo img {
+            width: 250px;
+            height: auto;
+            filter: brightness(0) invert(1);
+        }
+
+        footer h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            color: #9ca3af;
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--primary-color);
+        }
+
+        footer .phone {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        footer .copyright {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 2rem;
+            text-align: center;
+            color: #d1d5db;
+        }
+
+        /* Background Colors */
+        .bg-gray {
+            background: #f9fafb;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav .menu {
+                display: none;
+            }
+
+            .story-grid,
+            .card-grid,
+            .two-column-images,
+            .pricing-grid,
+            footer .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav .logo img {
+                width: 200px;
+            }
+
+            .section-header h2 {
+                font-size: 1.875rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="Jos Brothers Logo">
+            </div>
+            <ul class="menu">
+                <li><a href="#our-story" class="nav-link">Our Story</a></li>
+                <li><a href="#how-we-work" class="nav-link">How We Work</a></li>
+                <li><a href="#why-choose-us" class="nav-link">Why Choose Us?</a></li>
+                <li><a href="#process-of-work" class="nav-link">Process of Work</a></li>
+                <li><a href="#faq-prices" class="nav-link">FAQ & Prices</a></li>
+            </ul>
+            <div class="social-links">
+                <a href="https://wa.me/917593955500?text=Hi,%20I%20would%20like%20to%20enquire%20about%20your%20services" target="_blank" aria-label="WhatsApp">
+                    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+                </a>
+                <a href="https://instagram.com/josbrothersdrycleaners" target="_blank" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Our Story Section -->
+    <section id="our-story" style="padding: 10rem 0 3rem 0; background: white;">
+        <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
+            <div style="display: grid; grid-template-columns: 1fr; gap: 0; align-items: stretch;">
+                <!-- Image Side -->
+                <div style="position: relative; border-radius: 0.5rem 0 0 0.5rem; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); background-image: url('assets/images/hero_image.jpeg'); background-size: cover; background-position: center; min-height: 600px;">
+                    <div style="position: absolute; top: 1rem; right: 1rem;">
+                        <div style="background: #3e476b; width: 160px; height: 160px; border-radius: 50%; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; padding: 1.5rem;">
+                            <h3 style="color: white; font-size: 1.125rem; font-weight: 700; text-align: center;">
+                                Kerala's First and Finest Drycleaners
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Side -->
+                <div style="background: #3e476b; padding: 3rem; border-radius: 0 0.5rem 0.5rem 0;">
+                    <div style="margin-bottom: 3rem;">
+                        <h2 style="font-size: 2.25rem; font-weight: 700; color: white; margin-bottom: 0.5rem;">Our Heritage: Caring for Kochi's Wardrobes Since 1960</h2>
+                        <div style="width: 96px; height: 4px; background: white; margin-bottom: 1.5rem;"></div>
+                    </div>
+                    <div>
+                        <p style="font-size: 1.125rem; color: white; margin-bottom: 1rem; line-height: 1.6;">
+                            Founded in the beautiful city of Kochi, Kerala, in 1960, our family-owned business began with a simple vision: to deliver exceptional garment care with a personal touch. Over the last six decades, we have grown into a trusted community staple, blending time-tested tradition with modern innovation.
+                        </p>
+                        
+                        <h3 style="font-size: 1.5rem; font-weight: 600; color: white; margin-bottom: 1rem; margin-top: 1.5rem;">Why Generations of Kochi Trust Us:</h3>
+                        <ol style="list-style-position: inside; list-style-type: decimal; font-size: 1.125rem; color: white; margin-bottom: 1rem; line-height: 1.8;">
+                            <li style="margin-bottom: 0.75rem;">
+                                <strong>The Perfect Blend of Tech & Craft:</strong> We don't just rely on state-of-the-art machinery. Our true secret lies in our bespoke, highly skilled artisans who use meticulous hand-cleaning techniques for delicate fabrics.
+                            </li>
+                            <li style="margin-bottom: 0.75rem;">
+                                <strong>Beyond Dry Cleaning:</strong> We are your one-stop shop, offering expert alterations, repairs, and specialized shoe cleaning.
+                            </li>
+                            <li style="margin-bottom: 0.75rem;">
+                                <strong>Family Values:</strong> We treat every customer like family, anchoring our service in integrity, reliability, and personalized care.
+                            </li>
+                        </ol>
+
+                        <h3 style="font-size: 1.5rem; font-weight: 600; color: white; margin-bottom: 0.75rem; margin-top: 1.5rem;">Six Decades of Excellence</h3>
+                        <p style="font-size: 1.125rem; color: white; margin-bottom: 1rem; line-height: 1.6;">
+                            We are deeply grateful for the trust Kochi has placed in us since 1960. As a multi-generational family business, we look forward to keeping your cherished items looking their best for decades to come.
+                        </p>
+                        
+                        <p style="font-size: 1.125rem; color: white; font-style: italic;">
+                            Experience the timeless quality that sets us apart—visit us today
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        @media (min-width: 768px) {
+            #our-story > div > div {
+                grid-template-columns: 1fr 1fr !important;
+            }
+        }
+    </style>
+
+    <!-- Alternative Modern Hero Section -->
+    <section style="position: relative; min-height: 600px; background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%); overflow: hidden;">
+        <div style="max-width: 1280px; margin: 0 auto; padding: 5rem 2rem;">
+            <!-- Title Section - Full Width -->
+            <div style="margin-bottom: 1.5rem;">
+                <div style="display: inline-block; padding: 0.5rem 1rem; background: rgba(62, 71, 107, 0.1); border-radius: 50px; margin-bottom: 1rem;">
+                    <span style="color: #3e476b; font-weight: 600; font-size: 0.875rem; letter-spacing: 0.05em; text-transform: uppercase;">Since 1960</span>
+                </div>
+                
+                <h1 style="font-size: 3rem; font-weight: 700; color: #111827; line-height: 1.1;">
+                    Our Heritage: Caring for Kochi's Wardrobes
+                    <span style="display: block; color: #3e476b; margin-top: 0.5rem;">Since 1960</span>
+                </h1>
+            </div>
+            
+            <!-- Content and Image Grid -->
+            <div class="alternative-hero-grid" style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;">
+                <!-- Text Content -->
+                <div class="alternative-hero-text">
+                    <p style="font-size: 1.125rem; color: #374151; line-height: 1.6; margin-bottom: 2rem;">
+                        Founded in the beautiful city of Kochi, Kerala, in 1960, our family-owned business began with a simple vision: to deliver exceptional garment care with a personal touch. Over the last six decades, we have grown into a trusted community staple, blending time-tested tradition with modern innovation.
+                    </p>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: #111827; margin-bottom: 1rem;">Why Generations of Kochi Trust Us:</h3>
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                            <div style="display: flex; gap: 0.75rem; align-items: start;">
+                                <div style="width: 24px; height: 24px; background: rgba(62, 71, 107, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+                                    <div style="width: 8px; height: 8px; background: #3e476b; border-radius: 50%;"></div>
+                                </div>
+                                <div style="font-size: 1rem; line-height: 1.5;">
+                                    <strong style="color: #111827;">The Perfect Blend of Tech & Craft:</strong>
+                                    <span style="color: #374151;"> We don't just rely on state-of-the-art machinery. Our true secret lies in our bespoke, highly skilled artisans who use meticulous hand-cleaning techniques for delicate fabrics.</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 0.75rem; align-items: start;">
+                                <div style="width: 24px; height: 24px; background: rgba(62, 71, 107, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+                                    <div style="width: 8px; height: 8px; background: #3e476b; border-radius: 50%;"></div>
+                                </div>
+                                <div style="font-size: 1rem; line-height: 1.5;">
+                                    <strong style="color: #111827;">Beyond Dry Cleaning:</strong>
+                                    <span style="color: #374151;"> We are your one-stop shop, offering expert alterations, repairs, and specialized shoe cleaning.</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 0.75rem; align-items: start;">
+                                <div style="width: 24px; height: 24px; background: rgba(62, 71, 107, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+                                    <div style="width: 8px; height: 8px; background: #3e476b; border-radius: 50%;"></div>
+                                </div>
+                                <div style="font-size: 1rem; line-height: 1.5;">
+                                    <strong style="color: #111827;">Family Values:</strong>
+                                    <span style="color: #374151;"> We treat every customer like family, anchoring our service in integrity, reliability, and personalized care.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
+                        <a 
+                            href="https://wa.me/917593955500?text=Hi,%20I%20would%20like%20to%20enquire%20about%20your%20services"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style="padding: 1rem 2rem; background: #3e476b; color: white; border-radius: 0.5rem; font-weight: 600; text-decoration: none; box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); transition: all 0.3s; display: inline-block; text-align: center;"
+                            onmouseover="this.style.background='#2d3450'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 20px 25px rgba(0, 0, 0, 0.15)';"
+                            onmouseout="this.style.background='#3e476b'; this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 15px rgba(0, 0, 0, 0.1)';"
+                        >
+                            Get Started Today
+                        </a>
+                        <a 
+                            href="#faq-prices"
+                            style="padding: 1rem 2rem; background: white; color: #3e476b; border-radius: 0.5rem; font-weight: 600; text-decoration: none; box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); transition: all 0.3s; display: inline-block; text-align: center; border: 2px solid #3e476b;"
+                            onmouseover="this.style.background='#f9fafb'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 20px 25px rgba(0, 0, 0, 0.15)';"
+                            onmouseout="this.style.background='white'; this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 15px rgba(0, 0, 0, 0.1)';"
+                        >
+                            View Pricing
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Image Content -->
+                <div class="alternative-hero-image" style="position: relative;">
+                    <div style="position: relative; border-radius: 1rem; overflow: hidden; box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);">
+                        <img
+                            src="assets/images/hero_image.jpeg"
+                            alt="Jos Brothers Dry Cleaners - Premium Garment Care"
+                            style="width: 100%; height: auto; display: block;"
+                        />
+                        <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(62, 71, 107, 0.2), transparent);"></div>
+                    </div>
+                    
+                    <!-- Floating Badge -->
+                    <div style="position: absolute; top: 1rem; right: 1rem; background: #3e476b; border-radius: 50%; box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15); padding: 2rem; width: 160px; height: 160px; display: flex; align-items: center; justify-content: center;">
+                        <h3 style="color: white; font-size: 0.875rem; font-weight: 700; text-align: center; line-height: 1.3;">
+                            Kerala's First and Finest Drycleaners
+                        </h3>
+                    </div>
+                    
+                    <!-- Floating Card -->
+                    <div class="alternative-hero-floating-card" style="position: absolute; bottom: -3rem; left: -1.5rem; background: white; border-radius: 0.75rem; box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1); padding: 1.5rem; max-width: 280px;">
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                <div style="width: 40px; height: 40px; background: rgba(62, 71, 107, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <svg width="20" height="20" style="color: #3e476b;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </div>
+                                <div style="font-size: 0.875rem; font-weight: 600; color: #111827;">60+ Years of Excellence</div>
+                            </div>
+                            <p style="font-size: 0.875rem; color: #4b5563; line-height: 1.5; margin: 0;">
+                                We are deeply grateful for the trust Kochi has placed in us since 1960. Experience the timeless quality that sets us apart.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        @media (min-width: 1024px) {
+            .alternative-hero-grid {
+                grid-template-columns: 1fr 1fr !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .alternative-hero-grid h1 {
+                font-size: 2.5rem !important;
+            }
+            .alternative-hero-stats {
+                grid-template-columns: 1fr !important;
+            }
+            .alternative-hero-floating-card {
+                position: relative !important;
+                left: 0 !important;
+                bottom: 0 !important;
+                margin-top: 1rem !important;
+            }
+        }
+    </style>
+
+    <!-- How We Work Section -->
+    <section id="how-we-work">
+        <div class="container">
+            <div class="section-header">
+                <h2>How We Work</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="card-grid">
+                <div class="card-vertical">
+                    <div class="image">
+                        <img src="assets/images/CLEAN.png" alt="Clean">
+                    </div>
+                    <div class="content">
+                        <h3>CLEAN</h3>
+                        <p>Your clothes will be cleaned according to the service you have opted for. To know more, scroll below to see our services. If there are any items that require special care, do not hesitate to inform us.</p>
+                    </div>
+                </div>
+                <div class="card-vertical">
+                    <div class="image">
+                        <img src="assets/images/CALL.png" alt="Call">
+                    </div>
+                    <div class="content">
+                        <h3>CALL</h3>
+                        <p>Schedule a pick-up via a phone call (75939 55500), preferably before 3 PM for the same day service. We'll come and pick it up right from your doorstep. You can also drop off your garments at the nearest Jos Brothers Dry Cleaners branch.</p>
+                    </div>
+                </div>
+                <div class="card-vertical">
+                    <div class="image">
+                        <img src="assets/images/HELP.png" alt="Help">
+                    </div>
+                    <div class="content">
+                        <h3>HELP</h3>
+                        <p>If you are looking at dry cleaning slightly larger home decor fabrics, we're always there to help you, curtains and blankets are our specialty. Make sure to call your free home pick up and delivery team.</p>
+                    </div>
+                </div>
+                <div class="card-vertical">
+                    <div class="image">
+                        <img src="assets/images/DELIVERY.png" alt="Delivery">
+                    </div>
+                    <div class="content">
+                        <h3>DELIVERY</h3>
+                        <p>For the convenience of our ever-growing base of patrons, we have a dedicated customer care line where you can always call to enquire and share feedback.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pickup Image Section -->
+    <section>
+        <div class="container">
+            <div style="display: flex; justify-content: center;">
+                <img src="assets/images/pickup.jpeg" alt="Pickup Service" style="width: 100%; max-width: 1200px; height: auto; object-fit: contain;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose-us" class="bg-gray">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Us?</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="card-grid">
+                <div class="card card-horizontal">
+                    <div class="icon">
+                        <img src="assets/images/credibility.png" alt="Credibility">
+                    </div>
+                    <div class="content">
+                        <h3>CREDIBILITY</h3>
+                        <p>With over 70 years of expertise, we have thoughtfully designed a system that ensures your fabric stay fresh and flawless.</p>
+                    </div>
+                </div>
+                <div class="card card-horizontal">
+                    <div class="icon">
+                        <img src="assets/images/SAFETY.png" alt="Safety">
+                    </div>
+                    <div class="content">
+                        <h3>SAFETY</h3>
+                        <p>We make sure to use non-toxic solvents. We especially abstain from using PERC, our primary hydrocarbon is commonly referred to as "White Petrol" or "MTO (mineral turpentine oil)."</p>
+                    </div>
+                </div>
+                <div class="card card-horizontal">
+                    <div class="icon">
+                        <img src="assets/images/VALUE.png" alt="Value">
+                    </div>
+                    <div class="content">
+                        <h3>VALUE</h3>
+                        <p>Our services are priced reasonably and we assure you that the quality of our services speaks on our end product.</p>
+                    </div>
+                </div>
+                <div class="card card-horizontal">
+                    <div class="icon">
+                        <img src="assets/images/CUSTOMERCARE.png" alt="Customer Care">
+                    </div>
+                    <div class="content">
+                        <h3>CUSTOMER CARE</h3>
+                        <p>For the convenience of our ever-growing base of customers, we have a customer care line where you can call to enquire and share your feedback.</p>
+                        <p style="font-size: 0.875rem; margin-top: 0.5rem;">Working hours are from 9:30am to 6:00pm, Monday to Saturday.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Work Section -->
+    <section id="how-we-work">
+        <div class="container">
+            <div class="section-header">
+                <h2>How We Work</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="card-grid">
+                <div class="card-vertical">
+                    <div class="image">
+                        <img src="assets/images/CLEAN.png" alt="Clean">
+                    </div>
+                    <div class="content">
+                        <h3>CLEAN</h3>
+                        <p>Your clothes will be cleaned according to the service you have opted for. To know more, scroll below to see our services. If there are any items that require special care, do not hesitate to inform us.</p>
+                    </div>
+                </div>
+                <div class="card-vertical">
+                    <div class="image">
+                        <img src="assets/images/CALL.png" alt="Call">
+                    </div>
+                    <div class="content">
+                        <h3>CALL</h3>
+                        <p>Schedule a pick-up via a phone call (75939 55500), preferably before 3 PM for the same day service. We'll come and pick it up right from your doorstep. You can also drop off your garments at the nearest Jos Brothers Dry Cleaners branch.</p>
+                    </div>
+                </div>
+                <div class="card-vertical">
+                    <div class="image">
+                        <img src="assets/images/HELP.png" alt="Help">
+                    </div>
+                    <div class="content">
+                        <h3>HELP</h3>
+                        <p>If you are looking at dry cleaning slightly larger home decor fabrics, we're always there to help you, curtains and blankets are our specialty. Make sure to call your free home pick up and delivery team.</p>
+                    </div>
+                </div>
+                <div class="card-vertical">
+                    <div class="image">
+                        <img src="assets/images/DELIVERY.png" alt="Delivery">
+                    </div>
+                    <div class="content">
+                        <h3>DELIVERY</h3>
+                        <p>For the convenience of our ever-growing base of patrons, we have a dedicated customer care line where you can always call to enquire and share feedback.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Franchise Image Section -->
+    <section>
+        <div class="container">
+            <div style="display: flex; justify-content: center;">
+                <img src="assets/images/franchise.jpeg" alt="Franchise Opportunity" style="width: 100%; max-width: 1200px; height: auto; object-fit: contain;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Process of Work Section -->
+    <section id="process-of-work" class="bg-gray">
+        <div class="container">
+            <div class="section-header">
+                <h2>Process of Work</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="card-grid">
+                <div class="card card-horizontal">
+                    <div class="icon">
+                        <img src="assets/images/Inspection & Tagging.png" alt="Inspection & Tagging">
+                    </div>
+                    <div class="content">
+                        <h3>INSPECTION & TAGGING</h3>
+                        <p>When you bring the fabric to us, your clothes are examined. The cleaner will look out for stains, colour variations and any damages. If there are any stains spotted, whether its ink, blood or nasty grease, they note it and tag it.</p>
+                    </div>
+                </div>
+                <div class="card card-horizontal">
+                    <div class="icon">
+                        <img src="assets/images/Sorted and Drycleaned.png" alt="Sorted and Drycleaned">
+                    </div>
+                    <div class="content">
+                        <h3>SORTED AND DRYCLEANED</h3>
+                        <p>The clothes are then colour separated and placed in the machine or hand dipped in MTO (mineral turpentine oil), submerged in industrial fabric solvents and soap oils. Later, it's spun in a perforated cylinder and the excess solvent is removed. By that time.</p>
+                    </div>
+                </div>
+                <div class="card card-horizontal">
+                    <div class="icon">
+                        <img src="assets/images/Dried.png" alt="Dried">
+                    </div>
+                    <div class="content">
+                        <h3>DRIED</h3>
+                        <p>Once the washing is over with, the fabric is dried, with the garments folded inside-out to prevent colour loss. Using this technique, it helps retain the color and texture of your garments.</p>
+                    </div>
+                </div>
+                <div class="card card-horizontal">
+                    <div class="icon">
+                        <img src="assets/images/Pressed and packed.png" alt="Pressed and packed">
+                    </div>
+                    <div class="content">
+                        <h3>PRESSED AND PACKED</h3>
+                        <p>For the final touch, your garments are meticulously ironed and steamed, packed with collar holders and bands to utmost perfection, making them look brand new.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ & Prices Section -->
+    <section id="faq-prices">
+        <div class="container">
+            <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; margin-bottom: 3rem;">
+                <div>
+                    <h2 style="margin-bottom: 0.5rem;">Our Pricing</h2>
+                    <div class="underline" style="margin: 0;"></div>
+                </div>
+                <div>
+                    <a 
+                        href="assets/files/Updated rate sheet.pdf" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style="display: inline-block; background-color: #3e476b; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.125rem; transition: background-color 0.3s;"
+                        onmouseover="this.style.backgroundColor='#2e3650'"
+                        onmouseout="this.style.backgroundColor='#3e476b'"
+                    >
+                        Download Price List
+                    </a>
+                </div>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="image">
+                        <img src="assets/images/Shirt.jpg" alt="Shirt">
+                    </div>
+                    <div class="content">
+                        <h4>Shirt</h4>
+                        <p class="price">₹85</p>
+                        <button>Enquire Now</button>
+                    </div>
+                </div>
+                <div class="pricing-card">
+                    <div class="image">
+                        <img src="assets/images/Pants.jpg" alt="Pants">
+                    </div>
+                    <div class="content">
+                        <h4>Pants</h4>
+                        <p class="price">₹95</p>
+                        <button>Enquire Now</button>
+                    </div>
+                </div>
+                <div class="pricing-card">
+                    <div class="image">
+                        <img src="assets/images/top.jpg" alt="Churidhar">
+                    </div>
+                    <div class="content">
+                        <h4>Churidhar</h4>
+                        <p class="price">₹140 <span style="font-size: 1rem; font-weight: normal;">onwards</span></p>
+                        <button>Enquire Now</button>
+                    </div>
+                </div>
+                <div class="pricing-card">
+                    <div class="image">
+                        <img src="assets/images/Saree.jpg" alt="Saree">
+                    </div>
+                    <div class="content">
+                        <h4>Saree</h4>
+                        <p class="price">₹160 <span style="font-size: 1rem; font-weight: normal;">onwards</span></p>
+                        <button>Enquire Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms and Conditions Section -->
+    <section style="padding: 3rem 0; background-color: #f9fafb;">
+        <div class="container">
+            <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap;">
+                <div>
+                    <h3 style="font-size: 1.875rem; font-weight: 700; color: #3e476b; margin-bottom: 0.5rem;">Terms and Conditions</h3>
+                    <p style="color: #4b5563;">Please read our terms carefully before using our services</p>
+                </div>
+                <div>
+                    <a 
+                        href="terms-and-conditions.html"
+                        style="display: inline-block; background-color: #3e476b; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.125rem; transition: background-color 0.3s;"
+                        onmouseover="this.style.backgroundColor='#2e3650'"
+                        onmouseout="this.style.backgroundColor='#3e476b'"
+                    >
+                        Terms and Conditions
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="logo">
+                    <img src="assets/images/logo.png" alt="Jos Brothers Logo">
+                </div>
+                <div>
+                    <h3>Contact Us</h3>
+                    <p>1st Floor, Jos Brothers Drycleaners,<br>
+                    Jos Brothers building, Jos Jn.<br>
+                    M.G Road, Ernakulam, 682016</p>
+                    <p><strong style="color: white;">Email:</strong><br>
+                    <a href="mailto:info@josbrothersdrycleaners.com">info@josbrothersdrycleaners.com</a></p>
+                </div>
+                <div>
+                    <h3>Call Us</h3>
+                    <p><a href="tel:+917593955500" class="phone">+91 75939 55500</a></p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2026 Josbrothersdrycleaners.com. All rights reserved. | <a href="terms-and-conditions.html" style="text-decoration: none;">Terms and Conditions</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a
+        href="https://wa.me/917593955500?text=Hi,%20I%20would%20like%20to%20enquire%20about%20your%20services"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="floating-whatsapp"
+        aria-label="Enquire on WhatsApp"
+    >
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        <span>Enquire Now</span>
+    </a>
+
+    <style>
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            background-color: #25D366;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            z-index: 50;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .floating-whatsapp:hover {
+            background-color: #20BA5A;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .floating-whatsapp svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .floating-whatsapp span {
+                display: none;
+            }
+            .floating-whatsapp {
+                padding: 1rem;
+            }
+        }
+    </style>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    const offsetTop = targetSection.offsetTop - 112; // Account for fixed nav height
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Active link highlighting on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                const sectionHeight = section.offsetHeight;
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
