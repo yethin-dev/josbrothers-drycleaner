@@ -69,6 +69,7 @@
             padding: 0.5rem 0.75rem;
             transition: color 0.3s;
             border-bottom: 2px solid transparent;
+            cursor: pointer;
         }
 
         nav .menu a:hover,
@@ -95,6 +96,127 @@
             width: 24px;
             height: 24px;
             fill: currentColor;
+        }
+
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-color);
+            transition: all 0.3s;
+            border-radius: 3px;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            max-height: 500px;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            padding: 1rem;
+        }
+
+        .mobile-menu li {
+            margin-bottom: 0.5rem;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            text-decoration: none;
+            color: #4b5563;
+            font-weight: 500;
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .mobile-menu a:hover,
+        .mobile-menu a.active {
+            background: rgba(62, 71, 107, 0.1);
+            color: var(--primary-color);
+        }
+
+        .mobile-social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 1rem;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .mobile-social-links a {
+            color: #4b5563;
+        }
+
+        .mobile-social-links svg {
+            width: 28px;
+            height: 28px;
+            fill: currentColor;
+        }
+
+        /* Responsive Nav */
+        @media (max-width: 1023px) {
+            nav .container {
+                height: 80px;
+            }
+
+            nav .logo img {
+                width: 200px;
+            }
+
+            nav .menu,
+            nav .social-links {
+                display: none;
+            }
+
+            .mobile-menu-btn,
+            .mobile-menu {
+                display: block;
+            }
+        }
+
+        @media (max-width: 640px) {
+            nav .logo img {
+                width: 180px;
+            }
         }
 
         /* Sections */
@@ -375,7 +497,7 @@
         }
 
         footer .logo img {
-            width: 250px;
+            width: 350px;
             height: auto;
             filter: brightness(0) invert(1);
         }
@@ -467,7 +589,29 @@
                 <li><a href="#faq-prices" class="nav-link">FAQ & Prices</a></li>
             </ul>
             <div class="social-links">
-                <a href="https://wa.me/917593955500?text=Hi,%20I%20would%20like%20to%20enquire%20about%20your%20services" target="_blank" aria-label="WhatsApp">
+                <a href="https://wa.me/919995050000?text=Hi,%20I%20would%20like%20to%20enquire%20about%20your%20services" target="_blank" aria-label="WhatsApp">
+                    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+                </a>
+                <a href="https://instagram.com/josbrothersdrycleaners" target="_blank" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+                </a>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="#our-story" class="nav-link" onclick="closeMobileMenu()">Our Story</a></li>
+                <li><a href="#how-we-work" class="nav-link" onclick="closeMobileMenu()">How We Work</a></li>
+                <li><a href="#why-choose-us" class="nav-link" onclick="closeMobileMenu()">Why Choose Us?</a></li>
+                <li><a href="#process-of-work" class="nav-link" onclick="closeMobileMenu()">Process of Work</a></li>
+                <li><a href="#faq-prices" class="nav-link" onclick="closeMobileMenu()">FAQ & Prices</a></li>
+            </ul>
+            <div class="mobile-social-links">
+                <a href="https://wa.me/919995050000?text=Hi,%20I%20would%20like%20to%20enquire%20about%20your%20services" target="_blank" aria-label="WhatsApp">
                     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
                 </a>
                 <a href="https://instagram.com/josbrothersdrycleaners" target="_blank" aria-label="Instagram">
@@ -477,76 +621,11 @@
         </div>
     </nav>
 
-    <!-- Our Story Section -->
-    <section id="our-story" style="padding: 10rem 0 3rem 0; background: white;">
-        <div style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
-            <div style="display: grid; grid-template-columns: 1fr; gap: 0; align-items: stretch;">
-                <!-- Image Side -->
-                <div style="position: relative; border-radius: 0.5rem 0 0 0.5rem; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); background-image: url('assets/images/hero_image.jpeg'); background-size: cover; background-position: center; min-height: 600px;">
-                    <div style="position: absolute; top: 1rem; right: 1rem;">
-                        <div style="background: #3e476b; width: 160px; height: 160px; border-radius: 50%; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; padding: 1.5rem;">
-                            <h3 style="color: white; font-size: 1.125rem; font-weight: 700; text-align: center;">
-                                Kerala's First and Finest Drycleaners
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Text Side -->
-                <div style="background: #3e476b; padding: 3rem; border-radius: 0 0.5rem 0.5rem 0;">
-                    <div style="margin-bottom: 3rem;">
-                        <h2 style="font-size: 2.25rem; font-weight: 700; color: white; margin-bottom: 0.5rem;">Our Heritage: Caring for Kochi's Wardrobes Since 1960</h2>
-                        <div style="width: 96px; height: 4px; background: white; margin-bottom: 1.5rem;"></div>
-                    </div>
-                    <div>
-                        <p style="font-size: 1.125rem; color: white; margin-bottom: 1rem; line-height: 1.6;">
-                            Founded in the beautiful city of Kochi, Kerala, in 1960, our family-owned business began with a simple vision: to deliver exceptional garment care with a personal touch. Over the last six decades, we have grown into a trusted community staple, blending time-tested tradition with modern innovation.
-                        </p>
-                        
-                        <h3 style="font-size: 1.5rem; font-weight: 600; color: white; margin-bottom: 1rem; margin-top: 1.5rem;">Why Generations of Kochi Trust Us:</h3>
-                        <ol style="list-style-position: inside; list-style-type: decimal; font-size: 1.125rem; color: white; margin-bottom: 1rem; line-height: 1.8;">
-                            <li style="margin-bottom: 0.75rem;">
-                                <strong>The Perfect Blend of Tech & Craft:</strong> We don't just rely on state-of-the-art machinery. Our true secret lies in our bespoke, highly skilled artisans who use meticulous hand-cleaning techniques for delicate fabrics.
-                            </li>
-                            <li style="margin-bottom: 0.75rem;">
-                                <strong>Beyond Dry Cleaning:</strong> We are your one-stop shop, offering expert alterations, repairs, and specialized shoe cleaning.
-                            </li>
-                            <li style="margin-bottom: 0.75rem;">
-                                <strong>Family Values:</strong> We treat every customer like family, anchoring our service in integrity, reliability, and personalized care.
-                            </li>
-                        </ol>
-
-                        <h3 style="font-size: 1.5rem; font-weight: 600; color: white; margin-bottom: 0.75rem; margin-top: 1.5rem;">Six Decades of Excellence</h3>
-                        <p style="font-size: 1.125rem; color: white; margin-bottom: 1rem; line-height: 1.6;">
-                            We are deeply grateful for the trust Kochi has placed in us since 1960. As a multi-generational family business, we look forward to keeping your cherished items looking their best for decades to come.
-                        </p>
-                        
-                        <p style="font-size: 1.125rem; color: white; font-style: italic;">
-                            Experience the timeless quality that sets us apart—visit us today
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <style>
-        @media (min-width: 768px) {
-            #our-story > div > div {
-                grid-template-columns: 1fr 1fr !important;
-            }
-        }
-    </style>
-
     <!-- Alternative Modern Hero Section -->
     <section style="position: relative; min-height: 600px; background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%); overflow: hidden;">
-        <div style="max-width: 1280px; margin: 0 auto; padding: 5rem 2rem;">
+        <div style="max-width: 1280px; margin: 0 auto; padding: 30px 2rem 5rem 2rem;">
             <!-- Title Section - Full Width -->
             <div style="margin-bottom: 1.5rem;">
-                <div style="display: inline-block; padding: 0.5rem 1rem; background: rgba(62, 71, 107, 0.1); border-radius: 50px; margin-bottom: 1rem;">
-                    <span style="color: #3e476b; font-weight: 600; font-size: 0.875rem; letter-spacing: 0.05em; text-transform: uppercase;">Since 1960</span>
-                </div>
-                
                 <h1 style="font-size: 3rem; font-weight: 700; color: #111827; line-height: 1.1;">
                     Our Heritage: Caring for Kochi's Wardrobes
                     <span style="display: block; color: #3e476b; margin-top: 0.5rem;">Since 1960</span>
@@ -554,7 +633,7 @@
             </div>
             
             <!-- Content and Image Grid -->
-            <div class="alternative-hero-grid" style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;">
+            <div class="alternative-hero-grid" style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: start;">
                 <!-- Text Content -->
                 <div class="alternative-hero-text">
                     <p style="font-size: 1.125rem; color: #374151; line-height: 1.6; margin-bottom: 2rem;">
@@ -596,7 +675,7 @@
                     
                     <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
                         <a 
-                            href="https://wa.me/917593955500?text=Hi,%20I%20would%20like%20to%20enquire%20about%20your%20services"
+                            href="https://wa.me/919995050000?text=Hi,%20I%20would%20like%20to%20enquire%20about%20your%20services"
                             target="_blank"
                             rel="noopener noreferrer"
                             style="padding: 1rem 2rem; background: #3e476b; color: white; border-radius: 0.5rem; font-weight: 600; text-decoration: none; box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); transition: all 0.3s; display: inline-block; text-align: center;"
@@ -617,12 +696,18 @@
                 </div>
                 
                 <!-- Image Content -->
-                <div class="alternative-hero-image" style="position: relative; padding-top: 6rem;">
-                    <!-- Floating Badge - Top Right Corner -->
-                    <div style="position: absolute; top: -2rem; right: 1rem; background: #3e476b; border-radius: 50%; box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15); padding: 2rem; width: 160px; height: 160px; display: flex; align-items: center; justify-content: center; z-index: 10;">
-                        <h3 style="color: white; font-size: 0.875rem; font-weight: 700; text-align: center; line-height: 1.3;">
-                            Kerala's First and Finest Drycleaners
-                        </h3>
+                <div class="alternative-hero-image" style="position: relative;">
+                    <!-- Modern Badge - Ribbon Style -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="display: inline-flex; align-items: center; gap: 0.75rem; background: linear-gradient(to right, #3e476b, rgba(62, 71, 107, 0.8)); color: white; padding: 0.75rem 1.5rem; border-radius: 0.5rem; box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <div style="text-align: left;">
+                                <div style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.9;">Established 1960</div>
+                                <div style="font-size: 0.875rem; font-weight: 700;">Kerala's First & Finest Drycleaners</div>
+                            </div>
+                        </div>
                     </div>
                     
                     <div style="position: relative; border-radius: 1rem; overflow: hidden; box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);">
@@ -633,23 +718,19 @@
                         />
                         <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(62, 71, 107, 0.2), transparent);"></div>
                     </div>
-                    
-                    <!-- Floating Card -->
-                    <div class="alternative-hero-floating-card" style="position: absolute; bottom: -3rem; left: -1.5rem; background: white; border-radius: 0.75rem; box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1); padding: 1.5rem; max-width: 280px;">
-                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                            <div style="display: flex; align-items: center; gap: 0.75rem;">
-                                <div style="width: 40px; height: 40px; background: rgba(62, 71, 107, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                    <svg width="20" height="20" style="color: #3e476b;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                </div>
-                                <div style="font-size: 0.875rem; font-weight: 600; color: #111827;">60+ Years of Excellence</div>
-                            </div>
-                            <p style="font-size: 0.875rem; color: #4b5563; line-height: 1.5; margin: 0;">
-                                We are deeply grateful for the trust Kochi has placed in us since 1960. Experience the timeless quality that sets us apart.
-                            </p>
-                        </div>
-                    </div>
+                </div>
+            </div>
+            
+            <!-- Six Decades of Excellence Section - Full Width -->
+            <div style="margin-top: 3rem;">
+                <div style="background: linear-gradient(to bottom right, rgba(62, 71, 107, 0.05), rgba(62, 71, 107, 0.1)); border-left: 4px solid #3e476b; border-radius: 0.5rem; padding: 2rem;">
+                    <h3 style="font-size: 1.5rem; font-weight: 700; color: #3e476b; margin-bottom: 0.75rem;">Six Decades of Excellence</h3>
+                    <p style="font-size: 1.125rem; color: #374151; line-height: 1.75; margin-bottom: 0.75rem;">
+                        We are deeply grateful for the trust Kochi has placed in us since 1960. As a multi-generational family business, we look forward to keeping your cherished items looking their best for decades to come.
+                    </p>
+                    <p style="font-size: 1.125rem; color: #111827; font-weight: 600; font-style: italic;">
+                        Experience the timeless quality that sets us apart—visit us today
+                    </p>
                 </div>
             </div>
         </div>
@@ -665,15 +746,6 @@
         @media (max-width: 768px) {
             .alternative-hero-grid h1 {
                 font-size: 2.5rem !important;
-            }
-            .alternative-hero-stats {
-                grid-template-columns: 1fr !important;
-            }
-            .alternative-hero-floating-card {
-                position: relative !important;
-                left: 0 !important;
-                bottom: 0 !important;
-                margin-top: 1rem !important;
             }
         }
     </style>
@@ -778,54 +850,6 @@
                         <h3>CUSTOMER CARE</h3>
                         <p>For the convenience of our ever-growing base of customers, we have a customer care line where you can call to enquire and share your feedback.</p>
                         <p style="font-size: 1.125rem; margin-top: 0.5rem;">Working hours are from 9:30am to 6:00pm, Monday to Saturday.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How We Work Section -->
-    <section id="how-we-work">
-        <div class="container">
-            <div class="section-header">
-                <h2>How We Work</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="card-grid">
-                <div class="card-vertical">
-                    <div class="image">
-                        <img src="assets/images/CLEAN.png" alt="Clean">
-                    </div>
-                    <div class="content">
-                        <h3>CLEAN</h3>
-                        <p>Your clothes will be cleaned according to the service you have opted for. To know more, scroll below to see our services. If there are any items that require special care, do not hesitate to inform us.</p>
-                    </div>
-                </div>
-                <div class="card-vertical">
-                    <div class="image">
-                        <img src="assets/images/CALL.png" alt="Call">
-                    </div>
-                    <div class="content">
-                        <h3>CALL</h3>
-                        <p>Schedule a pick-up via a phone call (75939 55500), preferably before 3 PM for the same day service. We'll come and pick it up right from your doorstep. You can also drop off your garments at the nearest Jos Brothers Dry Cleaners branch.</p>
-                    </div>
-                </div>
-                <div class="card-vertical">
-                    <div class="image">
-                        <img src="assets/images/HELP.png" alt="Help">
-                    </div>
-                    <div class="content">
-                        <h3>HELP</h3>
-                        <p>If you are looking at dry cleaning slightly larger home decor fabrics, we're always there to help you, curtains and blankets are our specialty. Make sure to call your free home pick up and delivery team.</p>
-                    </div>
-                </div>
-                <div class="card-vertical">
-                    <div class="image">
-                        <img src="assets/images/DELIVERY.png" alt="Delivery">
-                    </div>
-                    <div class="content">
-                        <h3>DELIVERY</h3>
-                        <p>For the convenience of our ever-growing base of patrons, we have a dedicated customer care line where you can always call to enquire and share feedback.</p>
                     </div>
                 </div>
             </div>
@@ -1054,6 +1078,139 @@
         </div>
     </section>
 
+    <!-- Service Locations Section -->
+    <section id="service-locations" style="padding: 5rem 0; background-color: white;">
+        <div style="max-width: 1280px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 3rem; font-weight: 700; color: #3e476b; margin-bottom: 1rem;">Service Locations</h2>
+                <div style="width: 96px; height: 4px; background: #3e476b; margin: 0 auto 1rem;"></div>
+                <p style="font-size: 1.125rem; color: #6b7280; max-width: 48rem; margin: 0 auto;">
+                    We are proud to serve customers across multiple locations in Kerala
+                </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                <div style="background: linear-gradient(to bottom right, rgba(62, 71, 107, 0.05), rgba(62, 71, 107, 0.1)); border-radius: 0.5rem; padding: 1.5rem; text-align: center; transition: all 0.3s;" onmouseover="this.style.boxShadow='0 10px 15px rgba(0,0,0,0.1)'; this.style.transform='scale(1.05)'" onmouseout="this.style.boxShadow='none'; this.style.transform='scale(1)'">
+                    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                        <svg style="width: 24px; height: 24px; color: #3e476b;" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.125rem; font-weight: 700; color: #111827;">Kathrikadavu</h3>
+                </div>
+                <div style="background: linear-gradient(to bottom right, rgba(62, 71, 107, 0.05), rgba(62, 71, 107, 0.1)); border-radius: 0.5rem; padding: 1.5rem; text-align: center; transition: all 0.3s;" onmouseover="this.style.boxShadow='0 10px 15px rgba(0,0,0,0.1)'; this.style.transform='scale(1.05)'" onmouseout="this.style.boxShadow='none'; this.style.transform='scale(1)'">
+                    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                        <svg style="width: 24px; height: 24px; color: #3e476b;" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.125rem; font-weight: 700; color: #111827;">Kottayam</h3>
+                </div>
+                <div style="background: linear-gradient(to bottom right, rgba(62, 71, 107, 0.05), rgba(62, 71, 107, 0.1)); border-radius: 0.5rem; padding: 1.5rem; text-align: center; transition: all 0.3s;" onmouseover="this.style.boxShadow='0 10px 15px rgba(0,0,0,0.1)'; this.style.transform='scale(1.05)'" onmouseout="this.style.boxShadow='none'; this.style.transform='scale(1)'">
+                    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                        <svg style="width: 24px; height: 24px; color: #3e476b;" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.125rem; font-weight: 700; color: #111827;">Kakkanad</h3>
+                </div>
+                <div style="background: linear-gradient(to bottom right, rgba(62, 71, 107, 0.05), rgba(62, 71, 107, 0.1)); border-radius: 0.5rem; padding: 1.5rem; text-align: center; transition: all 0.3s;" onmouseover="this.style.boxShadow='0 10px 15px rgba(0,0,0,0.1)'; this.style.transform='scale(1.05)'" onmouseout="this.style.boxShadow='none'; this.style.transform='scale(1)'">
+                    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                        <svg style="width: 24px; height: 24px; color: #3e476b;" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.125rem; font-weight: 700; color: #111827;">Edappally</h3>
+                </div>
+                <div style="background: linear-gradient(to bottom right, rgba(62, 71, 107, 0.05), rgba(62, 71, 107, 0.1)); border-radius: 0.5rem; padding: 1.5rem; text-align: center; transition: all 0.3s;" onmouseover="this.style.boxShadow='0 10px 15px rgba(0,0,0,0.1)'; this.style.transform='scale(1.05)'" onmouseout="this.style.boxShadow='none'; this.style.transform='scale(1)'">
+                    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                        <svg style="width: 24px; height: 24px; color: #3e476b;" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.125rem; font-weight: 700; color: #111827;">Paravoor Junction</h3>
+                </div>
+                <div style="background: linear-gradient(to bottom right, rgba(62, 71, 107, 0.05), rgba(62, 71, 107, 0.1)); border-radius: 0.5rem; padding: 1.5rem; text-align: center; transition: all 0.3s;" onmouseover="this.style.boxShadow='0 10px 15px rgba(0,0,0,0.1)'; this.style.transform='scale(1.05)'" onmouseout="this.style.boxShadow='none'; this.style.transform='scale(1)'">
+                    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                        <svg style="width: 24px; height: 24px; color: #3e476b;" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.125rem; font-weight: 700; color: #111827;">Thrippunithura</h3>
+                </div>
+                <div style="background: linear-gradient(to bottom right, rgba(62, 71, 107, 0.05), rgba(62, 71, 107, 0.1)); border-radius: 0.5rem; padding: 1.5rem; text-align: center; transition: all 0.3s;" onmouseover="this.style.boxShadow='0 10px 15px rgba(0,0,0,0.1)'; this.style.transform='scale(1.05)'" onmouseout="this.style.boxShadow='none'; this.style.transform='scale(1)'">
+                    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                        <svg style="width: 24px; height: 24px; color: #3e476b;" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.125rem; font-weight: 700; color: #111827;">Petta</h3>
+                </div>
+                <div style="background: linear-gradient(to bottom right, rgba(62, 71, 107, 0.05), rgba(62, 71, 107, 0.1)); border-radius: 0.5rem; padding: 1.5rem; text-align: center; transition: all 0.3s;" onmouseover="this.style.boxShadow='0 10px 15px rgba(0,0,0,0.1)'; this.style.transform='scale(1.05)'" onmouseout="this.style.boxShadow='none'; this.style.transform='scale(1)'">
+                    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                        <svg style="width: 24px; height: 24px; color: #3e476b;" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.125rem; font-weight: 700; color: #111827;">Elamakkara</h3>
+                </div>
+                <div style="background: linear-gradient(to bottom right, rgba(62, 71, 107, 0.05), rgba(62, 71, 107, 0.1)); border-radius: 0.5rem; padding: 1.5rem; text-align: center; transition: all 0.3s;" onmouseover="this.style.boxShadow='0 10px 15px rgba(0,0,0,0.1)'; this.style.transform='scale(1.05)'" onmouseout="this.style.boxShadow='none'; this.style.transform='scale(1)'">
+                    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                        <svg style="width: 24px; height: 24px; color: #3e476b;" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.125rem; font-weight: 700; color: #111827;">Muvattupuzha</h3>
+                </div>
+                <div style="background: linear-gradient(to bottom right, rgba(62, 71, 107, 0.05), rgba(62, 71, 107, 0.1)); border-radius: 0.5rem; padding: 1.5rem; text-align: center; transition: all 0.3s;" onmouseover="this.style.boxShadow='0 10px 15px rgba(0,0,0,0.1)'; this.style.transform='scale(1.05)'" onmouseout="this.style.boxShadow='none'; this.style.transform='scale(1)'">
+                    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                        <svg style="width: 24px; height: 24px; color: #3e476b;" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.125rem; font-weight: 700; color: #111827;">Thodupuzha</h3>
+                </div>
+                <div style="background: linear-gradient(to bottom right, rgba(62, 71, 107, 0.05), rgba(62, 71, 107, 0.1)); border-radius: 0.5rem; padding: 1.5rem; text-align: center; transition: all 0.3s;" onmouseover="this.style.boxShadow='0 10px 15px rgba(0,0,0,0.1)'; this.style.transform='scale(1.05)'" onmouseout="this.style.boxShadow='none'; this.style.transform='scale(1)'">
+                    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                        <svg style="width: 24px; height: 24px; color: #3e476b;" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.125rem; font-weight: 700; color: #111827;">Jawaharlal Nagar</h3>
+                </div>
+                <div style="background: linear-gradient(to bottom right, rgba(62, 71, 107, 0.05), rgba(62, 71, 107, 0.1)); border-radius: 0.5rem; padding: 1.5rem; text-align: center; transition: all 0.3s;" onmouseover="this.style.boxShadow='0 10px 15px rgba(0,0,0,0.1)'; this.style.transform='scale(1.05)'" onmouseout="this.style.boxShadow='none'; this.style.transform='scale(1)'">
+                    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                        <svg style="width: 24px; height: 24px; color: #3e476b;" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.125rem; font-weight: 700; color: #111827;">Thrikkakara</h3>
+                </div>
+                <div style="background: linear-gradient(to bottom right, rgba(229, 231, 235, 1), rgba(209, 213, 219, 1)); border-radius: 0.5rem; padding: 1.5rem; text-align: center; transition: all 0.3s;" onmouseover="this.style.boxShadow='0 10px 15px rgba(0,0,0,0.1)'; this.style.transform='scale(1.05)'" onmouseout="this.style.boxShadow='none'; this.style.transform='scale(1)'">
+                    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                        <svg style="width: 24px; height: 24px; color: #6b7280;" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.125rem; font-weight: 700; color: #6b7280; font-style: italic;">and more...</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        @media (min-width: 768px) {
+            #service-locations > div > div:last-child {
+                grid-template-columns: repeat(3, 1fr) !important;
+            }
+        }
+        @media (min-width: 1024px) {
+            #service-locations > div > div:last-child {
+                grid-template-columns: repeat(4, 1fr) !important;
+            }
+        }
+    </style>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1071,7 +1228,7 @@
                 </div>
                 <div>
                     <h3>Call Us</h3>
-                    <p><a href="tel:+917593955500" class="phone">+91 75939 55500</a></p>
+                    <p><a href="tel:+919995050000" class="phone">+91 99950 50000</a></p>
                     <p><a href="tel:+919995050000" class="phone">+91 99950 50000</a></p>
                 </div>
             </div>
@@ -1083,7 +1240,7 @@
 
     <!-- Floating WhatsApp Button -->
     <a
-        href="https://wa.me/917593955500?text=Hi,%20I%20would%20like%20to%20enquire%20about%20your%20services"
+        href="https://wa.me/919995050000?text=Hi,%20I%20would%20like%20to%20enquire%20about%20your%20services"
         target="_blank"
         rel="noopener noreferrer"
         class="floating-whatsapp"
@@ -1112,6 +1269,7 @@
             z-index: 50;
             transition: all 0.3s ease;
             font-weight: 600;
+            cursor: pointer;
         }
 
         .floating-whatsapp:hover {
@@ -1174,6 +1332,21 @@
                 }
             });
         });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            mobileMenu.classList.toggle('active');
+            menuBtn.classList.toggle('active');
+        }
+
+        function closeMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            mobileMenu.classList.remove('active');
+            menuBtn.classList.remove('active');
+        }
     </script>
 </body>
 </html>
